@@ -3,619 +3,470 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOTO RENT - Sewa Mobil Premium</title>
+    <title>Toto Rental - Solusi Mobilitas Premium & Terpercaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
         }
-        .red-gradient {
-            background: linear-gradient(135deg, #EF4444 0%, #991B1B 100%);
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
         }
-        .red-gradient-text {
-            background: linear-gradient(135deg, #EF4444 0%, #FCA5A5 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F5DEB3 50%, #D4AF37 100%);
+        }
+        .text-gold {
+            color: #D4AF37;
+        }
+        .bg-deep-slate {
+            background-color: #0F172A;
+        }
+        .bg-slate-light {
+            background-color: #F8FAFC;
         }
         .glass-effect {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(239, 68, 68, 0.1);
-        }
-        .card-glass {
-            background: rgba(20, 20, 20, 0.5);
+            background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        .card-glass:hover {
-            border-color: rgba(239, 68, 68, 0.3);
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px -12px rgba(239, 68, 68, 0.15);
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #EF4444 0%, #991B1B 100%);
-            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        .btn-gold {
+            background: linear-gradient(135deg, #D4AF37 0%, #B8960C 100%);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
             transition: all 0.3s ease;
         }
-        .btn-primary:hover {
+        .btn-gold:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.4);
         }
-        .btn-outline {
-            border: 1.5px solid rgba(239, 68, 68, 0.5);
+        .btn-outline-gold {
+            border: 2px solid #D4AF37;
+            color: #D4AF37;
             transition: all 0.3s ease;
         }
-        .btn-outline:hover {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #EF4444;
-        }
-        .hero-bg {
-            background: radial-gradient(ellipse at top, rgba(239, 68, 68, 0.08) 0%, transparent 50%),
-                        radial-gradient(ellipse at bottom right, rgba(153, 27, 27, 0.05) 0%, transparent 50%),
-                        #030712;
+        .btn-outline-gold:hover {
+            background: rgba(212, 175, 55, 0.1);
         }
         .floating {
-            animation: floating 3s ease-in-out infinite;
+            animation: floating 4s ease-in-out infinite;
         }
         @keyframes floating {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
-        .pulse-glow {
-            animation: pulse-glow 2s ease-in-out infinite;
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        @keyframes pulse-glow {
-            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.4); }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.15);
         }
-        .gradient-border {
-            background: linear-gradient(135deg, #EF4444, #991B1B, #EF4444);
-            background-size: 200% 200%;
-            animation: gradient-border 3s ease infinite;
-        }
-        @keyframes gradient-border {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .step-line {
+            background: linear-gradient(90deg, #D4AF37 0%, rgba(212, 175, 55, 0.2) 100%);
         }
     </style>
 </head>
-<body class="bg-[#030712] text-white overflow-x-hidden">
-    
+<body class="bg-slate-light text-slate-800 overflow-x-hidden">
+
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 red-gradient rounded-xl flex items-center justify-center pulse-glow">
-                        <i class="fas fa-car-side text-xl text-white"></i>
+                <div class="flex items-center gap-2">
+                    <div class="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center">
+                        <i class="fas fa-bolt text-slate-900 text-xl"></i>
                     </div>
-                    <span class="text-2xl font-extrabold tracking-tight">
-                        <span class="text-red-500">TOTO</span> RENT
+                    <span class="text-2xl font-bold tracking-tight text-slate-900">
+                        Toto <span class="text-gold">Rental</span>
                     </span>
                 </div>
                 <div class="hidden md:flex items-center gap-8">
-                    <a href="#home" class="text-gray-300 hover:text-white transition-colors font-medium">Beranda</a>
-                    <a href="#fleet" class="text-gray-300 hover:text-white transition-colors font-medium">Armada</a>
-                    <a href="#features" class="text-gray-300 hover:text-white transition-colors font-medium">Keunggulan</a>
-                    <a href="#testimonials" class="text-gray-300 hover:text-white transition-colors font-medium">Ulasan</a>
+                    <a href="#home" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Beranda</a>
+                    <a href="#fleet" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Armada</a>
+                    <a href="#whyus" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Mengapa Kami</a>
+                    <a href="#testimonials" class="text-slate-600 hover:text-slate-900 font-medium transition-colors">Ulasan</a>
                 </div>
-                <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                    <i class="fas fa-phone mr-2"></i>Hubungi
-                </button>
+                <a href="https://wa.me/6281234567890" target="_blank" class="btn-gold px-6 py-2.5 rounded-full text-slate-900 font-semibold">
+                    <i class="fab fa-whatsapp mr-2"></i> Konsultasi
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden">
-        <!-- Decorative elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-red-600/10 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl"></div>
+    <!-- 1. Hero Section - The Hook -->
+    <section id="home" class="bg-deep-slate text-white pt-32 pb-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-slate-900/30 to-transparent"></div>
         
-        <div class="max-w-7xl mx-auto px-6 py-12 grid lg:grid-cols-2 gap-16 items-center relative z-10">
-            <div class="space-y-8">
-                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20">
-                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-                    <span class="text-red-400 text-sm font-semibold">Kendaraan Siap Antar • 24/7</span>
-                </div>
-                
-                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight">
-                    Rental Mobil
-                    <span class="red-gradient-text">Premium Terpercaya</span>
-                </h1>
-                
-                <p class="text-gray-400 text-lg leading-relaxed max-w-xl">
-                    Pengalaman berkendara mewah dan nyaman dengan armada terlengkap. Dari city car hingga supercar, semua tersedia untuk kebutuhan Anda.
-                </p>
-                
-                <div class="flex flex-wrap gap-4">
-                    <a href="#fleet" class="btn-primary px-8 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2">
-                        Jelajahi Armada <i class="fas fa-arrow-right"></i>
-                    </a>
-                    <button class="btn-outline px-8 py-4 rounded-full text-white font-semibold">
-                        <i class="fas fa-play-circle mr-2"></i>Lihat Demo
-                    </button>
-                </div>
-                
-                <div class="grid grid-cols-3 gap-6 pt-4">
-                    <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <div class="text-4xl font-extrabold red-gradient-text">15+</div>
-                        <div class="text-gray-400 text-sm mt-1">Jenis Mobil</div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700">
+                        <i class="fas fa-crown text-gold"></i>
+                        <span class="text-slate-300 text-sm font-medium">Kualitas Premium • Layanan 24/7</span>
                     </div>
-                    <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <div class="text-4xl font-extrabold red-gradient-text">10K+</div>
-                        <div class="text-gray-400 text-sm mt-1">Pelanggan Puas</div>
+                    
+                    <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+                        Mobilitas Anda, 
+                        <span class="text-gold block mt-2">Kami Yang Pastikan</span>
+                    </h1>
+                    
+                    <p class="text-slate-300 text-lg leading-relaxed max-w-xl">
+                        Dari armada SUV 4x4 tangguh untuk proyek, hingga MPV eksekutif untuk kebutuhan VIP. Semua unit selalu prima, siap antar Anda menuju kesuksesan.
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#fleet" class="btn-gold px-8 py-4 rounded-full text-slate-900 font-semibold inline-flex items-center gap-2">
+                            Lihat Armada <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://wa.me/6281234567890" target="_blank" class="btn-outline-gold px-8 py-4 rounded-full font-semibold inline-flex items-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Konsultasi WA
+                        </a>
                     </div>
-                    <div class="text-center p-4 rounded-2xl bg-white/5 border border-white/5">
-                        <div class="text-4xl font-extrabold red-gradient-text">5.0</div>
-                        <div class="text-gray-400 text-sm mt-1">Rating Layanan</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="relative">
-                <div class="absolute -inset-1 gradient-border rounded-[2rem] opacity-50"></div>
-                <div class="relative glass-effect rounded-[2rem] p-2 floating">
-                    <div class="w-full aspect-square rounded-[1.5rem] overflow-hidden">
-                        <img src="images/logo.jpeg" alt="TOTO RENT" class="w-full h-full object-cover">
+                    
+                    <div class="flex items-center gap-3 text-slate-400">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        <span>Tersedia sistem Lepas Kunci / Dengan Driver Profesional</span>
                     </div>
                 </div>
                 
-                <!-- Floating card -->
-                <div class="absolute -bottom-6 -left-6 glass-effect rounded-2xl p-4 flex items-center gap-4">
-                    <div class="w-12 h-12 red-gradient rounded-xl flex items-center justify-center">
-                        <i class="fas fa-check text-white text-lg"></i>
+                <div class="relative lg:pl-12">
+                    <div class="relative z-10 floating">
+                        <img src="images/zenix.jpeg" alt="Toto Rental Premium Fleet" class="w-full h-96 object-cover rounded-3xl shadow-2xl border-4 border-slate-700/50">
                     </div>
-                    <div>
-                        <div class="text-white font-semibold">Ketersediaan 100%</div>
-                        <div class="text-gray-400 text-sm">Mobil selalu siap</div>
-                    </div>
+                    <!-- Overflow decorative element -->
+                    <div class="absolute -bottom-8 -left-8 w-48 h-48 bg-gradient-to-br from-gold/20 to-transparent rounded-full blur-3xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Fleet Section -->
-    <section id="fleet" class="py-32 relative">
+    <!-- 2. Social Proof / Trust Badge - The Validation -->
+    <section class="py-12 bg-white border-y border-slate-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-4xl font-extrabold text-slate-900 mb-2">100+</div>
+                    <div class="text-slate-500 text-sm font-medium">Korporat Terlayani</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-extrabold text-slate-900 mb-2">50+</div>
+                    <div class="text-slate-500 text-sm font-medium">Armada Selalu Prima</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-extrabold text-slate-900 mb-2">24/7</div>
+                    <div class="text-slate-500 text-sm font-medium">Support & Layanan</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-extrabold text-slate-900 mb-2">10+</div>
+                    <div class="text-slate-500 text-sm font-medium">Tahun Pengalaman</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Fleet Catalogue & Smart Filter - The Core Solution -->
+    <section id="fleet" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-red-400 text-sm font-semibold tracking-[0.2em] uppercase">Armada Kami</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold mt-4">Pilih Kendaraan Impianmu</h2>
+                <span class="text-gold text-sm font-semibold tracking-[0.2em] uppercase">Armada Kami</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">Pilih Kendaraan Yang Anda Butuhkan</h2>
             </div>
             
+            <!-- Filter -->
             <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="filter-btn filter-active px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white text-[#030712]" data-category="all">Semua</button>
-                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white/5 border border-white/10 text-gray-300 hover:border-red-500/50" data-category="suv4x4">SUV 4x4</button>
-                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white/5 border border-white/10 text-gray-300 hover:border-red-500/50" data-category="mpv">MPV</button>
-                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white/5 border border-white/10 text-gray-300 hover:border-red-500/50" data-category="citycar">City Car</button>
-                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white/5 border border-white/10 text-gray-300 hover:border-red-500/50" data-category="commercial">Komersial</button>
-                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white/5 border border-white/10 text-gray-300 hover:border-red-500/50" data-category="luxury">Luxury</button>
+                <button class="filter-btn filter-active px-6 py-3 rounded-full text-sm font-semibold transition-all bg-deep-slate text-white" data-category="all">Semua</button>
+                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white border border-slate-200 text-slate-600 hover:border-gold" data-category="suv">SUV & 4x4</button>
+                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white border border-slate-200 text-slate-600 hover:border-gold" data-category="mpv">Executive MPV</button>
+                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white border border-slate-200 text-slate-600 hover:border-gold" data-category="city">City Car</button>
+                <button class="filter-btn px-6 py-3 rounded-full text-sm font-semibold transition-all bg-white border border-slate-200 text-slate-600 hover:border-gold" data-category="commercial">Commercial</button>
             </div>
             
+            <!-- Fleet Grid -->
             <div id="car-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Fortuner 4x4 -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="suv4x4">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/fortuner.jpeg" alt="Toyota Fortuner 4x4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Alphard -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="mpv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/alphard.jpeg" alt="Toyota Alphard" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Fortuner 4x4</h3>
-                        <p class="text-gray-400 mb-4">SUV Tangguh Segala Medan</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Alphard</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 1.6M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 6.000.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Alphard" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Pajero Dakar 4x4 -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="suv4x4">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/pajero.jpeg" alt="Mitsubishi Pajero Dakar 4x4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Fortuner -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="suv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/fortuner.jpeg" alt="Toyota Fortuner" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Mitsubishi Pajero Dakar 4x4</h3>
-                        <p class="text-gray-400 mb-4">SUV Legendaris</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Fortuner 4x4</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2024</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 1.6M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 1.600.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Fortuner" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Double Cabin -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="commercial">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/hilux.jpeg" alt="Double Cabin" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Pajero -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="suv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/pajero.jpeg" alt="Mitsubishi Pajero" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Double Cabin Hilux</h3>
-                        <p class="text-gray-400 mb-4">Pickup Tangguh</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Manual/AT</span>
-                            <span><i class="fas fa-users mr-1"></i> 5 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Mitsubishi Pajero Dakar</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2024</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 1.6M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 1.600.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Pickup LCV -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="commercial">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/grandmax.jpeg" alt="Pickup LCV" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Pickup LCV</h3>
-                        <p class="text-gray-400 mb-4">Untuk Kebutuhan Bisnis</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin/Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 2-3 Orang</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 400K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
-                            </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- City Car -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="citycar">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/agya.jpeg" alt="City Car" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">City Car Agya/Brio</h3>
-                        <p class="text-gray-400 mb-4">Irit & Mudah Dikendarai</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin</span>
-                            <span><i class="fas fa-cog mr-1"></i> AT/Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 5 Orang</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 350K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
-                            </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Avanza/Xenia -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="mpv">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/avanza.jpeg" alt="Toyota Avanza" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Avanza NEW</h3>
-                        <p class="text-gray-400 mb-4">MPV Keluarga Favorit</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin</span>
-                            <span><i class="fas fa-cog mr-1"></i> AT/Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 450K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
-                            </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Innova Reborn -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="mpv">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/reborn.jpeg" alt="Toyota Innova Reborn" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Innova Reborn</h3>
-                        <p class="text-gray-400 mb-4">MPV Mewah & Nyaman</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin/Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
-                        </div>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 600K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
-                            </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Mitsubishi%20Pajero" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Innova Zenix -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="mpv">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/zenix.jpeg" alt="Toyota Innova Zenix" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="mpv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/zenix.jpeg" alt="Toyota Innova Zenix" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Innova Zenix</h3>
-                        <p class="text-gray-400 mb-4">MPV Hybrid Terbaru</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Hybrid</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Innova Zenix</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2024</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 800K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 800.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Innova%20Zenix" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Rocky -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="suv4x4">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/rocky.jpeg" alt="Daihatsu Rocky" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Innova Reborn -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="mpv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/reborn.jpeg" alt="Toyota Innova Reborn" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Daihatsu Rocky</h3>
-                        <p class="text-gray-400 mb-4">Compact SUV Stylish</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin</span>
-                            <span><i class="fas fa-cog mr-1"></i> AT/Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 5 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Innova Reborn</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 450K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 600.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Innova%20Reborn" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Raize -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="suv4x4">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/raize.jpeg" alt="Toyota Raize" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Avanza -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="mpv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/avanza.jpeg" alt="Toyota Avanza" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Raize</h3>
-                        <p class="text-gray-400 mb-4">Compact SUV Modern</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin</span>
-                            <span><i class="fas fa-cog mr-1"></i> AT/Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 5 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Avanza New</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> AT/Manual</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 450K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 450.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Avanza" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Xpander -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="mpv">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/xpander.jpeg" alt="Mitsubishi Xpander" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="mpv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/xpander.jpeg" alt="Mitsubishi Xpander" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Mitsubishi Xpander</h3>
-                        <p class="text-gray-400 mb-4">MPV Dinamis</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin</span>
-                            <span><i class="fas fa-cog mr-1"></i> AT/Manual</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Mitsubishi Xpander</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> AT/Manual</span>
+                            <span><i class="fas fa-users mr-2"></i> 7 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 450K</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 450.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Mitsubishi%20Xpander" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Premio -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="luxury">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/premio.jpeg" alt="Toyota Hiace Premio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Hilux -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="suv">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/hilux.jpeg" alt="Toyota Hilux" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Hiace Premio</h3>
-                        <p class="text-gray-400 mb-4">Van Mewah untuk Rombongan</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 10-12 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Hilux Double Cabin</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Manual/AT</span>
+                            <span><i class="fas fa-users mr-2"></i> 5 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 3M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 1.600.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Hilux" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Agya -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="city">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/agya.jpeg" alt="Toyota Agya" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Agya</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> AT/Manual</span>
+                            <span><i class="fas fa-users mr-2"></i> 5 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gold text-3xl font-extrabold">Rp 350.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Agya" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hiace Premio -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="commercial">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/premio.jpeg" alt="Toyota Hiace Premio" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Hiace Premio</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Automatic</span>
+                            <span><i class="fas fa-users mr-2"></i> 10-12 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <span class="text-gold text-3xl font-extrabold">Rp 3.000.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
+                            </div>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Hiace%20Premio" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Commuter -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="commercial">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/commuter.jpeg" alt="Toyota Hiace Commuter" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="commercial">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/commuter.jpeg" alt="Toyota Hiace Commuter" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Hiace Commuter</h3>
-                        <p class="text-gray-400 mb-4">Van Kapasitas Besar</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Solar</span>
-                            <span><i class="fas fa-cog mr-1"></i> Manual/AT</span>
-                            <span><i class="fas fa-users mr-1"></i> 15 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Toyota Hiace Commuter</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Manual/AT</span>
+                            <span><i class="fas fa-users mr-2"></i> 15 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 3M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 3.000.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Toyota%20Hiace%20Commuter" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Alphard -->
-                <div class="car-card card-glass rounded-3xl overflow-hidden group" data-category="luxury">
-                    <div class="relative h-64 overflow-hidden">
-                        <div class="absolute top-4 left-4 z-10">
-                            <span class="bg-green-500/20 backdrop-blur-sm text-green-400 px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1">
-                                <i class="fas fa-check"></i> Tersedia
-                            </span>
-                        </div>
-                        <img src="images/alphard.jpeg" alt="Toyota Alphard" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Grandmax -->
+                <div class="car-card bg-white rounded-3xl overflow-hidden shadow-lg card-hover" data-category="commercial">
+                    <div class="h-64 overflow-hidden">
+                        <img src="images/grandmax.jpeg" alt="Daihatsu Grandmax" class="w-full h-full object-cover">
                     </div>
                     <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Toyota Alphard</h3>
-                        <p class="text-gray-400 mb-4">MPV Premium Kelas Atas</p>
-                        <div class="flex items-center gap-4 text-sm text-gray-500 mb-6">
-                            <span><i class="fas fa-gas-pump mr-1"></i> Bensin/Hybrid</span>
-                            <span><i class="fas fa-cog mr-1"></i> Automatic</span>
-                            <span><i class="fas fa-users mr-1"></i> 7 Orang</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Daihatsu Grandmax Pickup</h3>
+                        <div class="flex items-center gap-6 mb-6 text-slate-500 text-sm">
+                            <span><i class="fas fa-cog mr-2"></i> Manual</span>
+                            <span><i class="fas fa-users mr-2"></i> 2-3 Orang</span>
+                            <span><i class="fas fa-calendar mr-2"></i> 2023</span>
                         </div>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-white text-3xl font-extrabold">Rp 6M</span>
-                                <span class="text-gray-500 text-sm">/hari</span>
+                                <span class="text-gold text-3xl font-extrabold">Rp 400.000</span>
+                                <span class="text-slate-400 text-sm block">/hari</span>
                             </div>
-                            <button class="btn-primary px-6 py-2.5 rounded-full text-white font-semibold">
-                                <i class="fas fa-calendar-check mr-2"></i>Book
-                            </button>
+                            <a href="https://wa.me/6281234567890?text=Halo%20Veloce%20Mobility,%20saya%20ingin%20memesan%20Daihatsu%20Grandmax" target="_blank" class="btn-gold px-5 py-2.5 rounded-full text-slate-900 font-semibold text-sm">
+                                <i class="fab fa-whatsapp mr-1"></i> Pesan
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -623,136 +474,153 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-32 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-red-950/5 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <span class="text-red-400 text-sm font-semibold tracking-[0.2em] uppercase">Mengapa Kami</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold mt-4">Keunggulan Layanan Kami</h2>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="card-glass p-8 rounded-3xl text-center">
-                    <div class="w-16 h-16 red-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-crown text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Premium Service</h3>
-                    <p class="text-gray-400 text-sm">Layanan 24/7 dengan standar kualitas internasional</p>
-                </div>
-                
-                <div class="card-glass p-8 rounded-3xl text-center">
-                    <div class="w-16 h-16 red-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-user-tie text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Sopir Profesional</h3>
-                    <p class="text-gray-400 text-sm">Sopir berpengalaman dan berpakaian rapi siap mengantar</p>
-                </div>
-                
-                <div class="card-glass p-8 rounded-3xl text-center">
-                    <div class="w-16 h-16 red-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-calendar-check text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Pemesanan Fleksibel</h3>
-                    <p class="text-gray-400 text-sm">Batalkan atau ubah jadwal tanpa biaya tambahan</p>
-                </div>
-                
-                <div class="card-glass p-8 rounded-3xl text-center">
-                    <div class="w-16 h-16 red-gradient rounded-2xl flex items-center justify-center mx-auto mb-6">
-                        <i class="fas fa-shield-alt text-2xl text-white"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Asuransi Lengkap</h3>
-                    <p class="text-gray-400 text-sm">Perlindungan penuh untuk ketenangan Anda</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-32 relative overflow-hidden">
+    <!-- 4. Value Proposition / Why Choose Us - The Justification -->
+    <section id="whyus" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
-                    <div class="absolute -top-6 -left-6 w-full h-full border-2 border-red-500/20 rounded-[2rem]"></div>
-                    <img src="images/zenix.jpeg" alt="About TOTO RENT" class="w-full h-96 object-cover rounded-[2rem] relative z-10">
+                    <img src="images/zenix.jpeg" alt="Service Excellence Toto Rental" class="w-full h-[500px] object-cover rounded-3xl shadow-xl">
                 </div>
                 
                 <div class="space-y-8">
-                    <span class="text-red-400 text-sm font-semibold tracking-[0.2em] uppercase">Tentang Kami</span>
-                    <h2 class="text-4xl md:text-5xl font-extrabold">Mewah, Aman, dan Terpercaya</h2>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        TOTO RENT hadir untuk memenuhi kebutuhan transportasi mewah Anda. Dengan pengalaman lebih dari 10 tahun, kami menyediakan armada mobil terbaik dan layanan yang memuaskan.
-                    </p>
-                    <p class="text-gray-400 leading-relaxed">
-                        Dari perjalanan bisnis hingga acara spesial, kami siap mendukung setiap momen Anda dengan kenyamanan dan keanggunan yang tak tertandingi.
-                    </p>
+                    <span class="text-gold text-sm font-semibold tracking-[0.2em] uppercase">Mengapa Memilih Kami</span>
+                    <h2 class="text-4xl lg:text-5xl font-bold text-slate-900">Kualitas Yang Selalu Terjaga</h2>
                     
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
-                            <div class="text-3xl font-extrabold text-red-500 mb-2">10+</div>
-                            <div class="text-gray-400 text-sm">Tahun Pengalaman</div>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-sparkles text-slate-900 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Unit Bersih & Terawat</h4>
+                                <p class="text-slate-500">Setiap mobil selalu dalam kondisi prima, bersih, dan siap pakai sebelum pelanggan gunakan.</p>
+                            </div>
                         </div>
-                        <div class="p-6 rounded-2xl bg-white/5 border border-white/5">
-                            <div class="text-3xl font-extrabold text-red-500 mb-2">100%</div>
-                            <div class="text-gray-400 text-sm">Kepuasan Pelanggan</div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-file-contract text-slate-900 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Legalitas Jelas & Aman</h4>
+                                <p class="text-slate-500">Semua unit memiliki dokumen lengkap dan asuransi yang menjamin keamanan Anda.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user-tie text-slate-900 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Driver Profesional</h4>
+                                <p class="text-slate-500">Tersedia driver berpengalaman, ramah, dan menguasai rute dengan baik.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4">
+                            <div class="w-14 h-14 gold-gradient rounded-2xl flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-infinity text-slate-900 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Fleksibilitas Proyek</h4>
+                                <p class="text-slate-500">Kami mendukung kebutuhan proyek jangka panjang maupun pendek dengan harga terbaik.</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <button class="btn-primary px-8 py-4 rounded-full text-white font-semibold inline-flex items-center gap-2">
-                        Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-32 relative">
+    <!-- 5. Simplified Booking Steps - The Ease of Access -->
+    <section class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-red-400 text-sm font-semibold tracking-[0.2em] uppercase">Ulasan</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold mt-4">Apa Kata Mereka</h2>
+                <span class="text-gold text-sm font-semibold tracking-[0.2em] uppercase">Cara Memesan</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">Hanya 3 Langkah Mudah</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Step Line (Desktop) -->
+                <div class="hidden md:block absolute top-16 left-1/4 right-1/4 h-1 step-line z-0"></div>
+                
+                <!-- Step 1 -->
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <span class="text-3xl font-bold text-slate-900">1</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Pilih Unit</h3>
+                    <p class="text-slate-500">Pilih kendaraan yang sesuai dengan kebutuhan Anda dari armada kami.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <span class="text-3xl font-bold text-slate-900">2</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Tentukan Tanggal</h3>
+                    <p class="text-slate-500">Tentukan tanggal dan durasi sewa, serta kebutuhan driver atau lepas kunci.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center relative z-10">
+                    <div class="w-20 h-20 gold-gradient rounded-full flex items-center justify-center mx-auto mb-6 shadow-xl">
+                        <span class="text-3xl font-bold text-slate-900">3</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Konfirmasi WA</h3>
+                    <p class="text-slate-500">Klik tombol pesan dan konfirmasi langsung via WhatsApp untuk proses yang cepat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. VIP Testimonials - The Final Push -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-gold text-sm font-semibold tracking-[0.2em] uppercase">Ulasan Pelanggan</span>
+                <h2 class="text-4xl lg:text-5xl font-bold text-slate-900 mt-4">Apa Kata Mereka?</h2>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-glass p-8 rounded-3xl">
-                    <div class="flex text-yellow-400 mb-6 gap-1">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="flex text-gold mb-6 gap-1">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-gray-300 mb-8 leading-relaxed">"Layanan luar biasa! Mobilnya bersih dan sopirnya sangat profesional. Pengalaman yang tak terlupakan."</p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">"Luar biasa! Alphardnya sangat bersih dan nyaman. Drivernya juga sangat profesional dan ramah. Cocok banget untuk kebutuhan bisnis kami."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-full red-gradient flex items-center justify-center text-white font-bold text-xl">AS</div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xl">AS</div>
                         <div>
-                            <div class="font-bold text-white">Andi Setiawan</div>
-                            <div class="text-gray-500 text-sm">Pengusaha</div>
+                            <div class="font-bold text-slate-900">Andi Setiawan</div>
+                            <div class="text-slate-500 text-sm">Direktur PT. Maju Bersama</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="card-glass p-8 rounded-3xl">
-                    <div class="flex text-yellow-400 mb-6 gap-1">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="flex text-gold mb-6 gap-1">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-gray-300 mb-8 leading-relaxed">"Harga terjangkau tapi kualitasnya premium. Armada lengkap dan proses pemesanan sangat mudah."</p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">"Fortuner 4x4nya bikin proyek di daerah terpencil berjalan lancar. Mobilnya powerful dan selalu dalam kondisi prima. Recommended!"</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-full red-gradient flex items-center justify-center text-white font-bold text-xl">SP</div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xl">BR</div>
                         <div>
-                            <div class="font-bold text-white">Siti Putri</div>
-                            <div class="text-gray-500 text-sm">Dokter</div>
+                            <div class="font-bold text-slate-900">Budi Rahman</div>
+                            <div class="text-slate-500 text-sm">Project Manager PT. Konstruksi Nusantara</div>
                         </div>
                     </div>
                 </div>
                 
-                <div class="card-glass p-8 rounded-3xl">
-                    <div class="flex text-yellow-400 mb-6 gap-1">
+                <div class="bg-slate-50 p-8 rounded-3xl border border-slate-100">
+                    <div class="flex text-gold mb-6 gap-1">
                         <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
                     </div>
-                    <p class="text-gray-300 mb-8 leading-relaxed">"Saya sudah 3 tahun berlangganan. Pelayanan selalu konsisten dan mobil selalu dalam kondisi prima."</p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">"Kami sudah 3 tahun berlangganan Toto Rental. Layanan selalu konsisten dan armadanya selalu update. Trusted!"</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 rounded-full red-gradient flex items-center justify-center text-white font-bold text-xl">BR</div>
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-white font-bold text-xl">SP</div>
                         <div>
-                            <div class="font-bold text-white">Budi Rahman</div>
-                            <div class="text-gray-500 text-sm">Manager</div>
+                            <div class="font-bold text-slate-900">Siti Putri</div>
+                            <div class="text-slate-500 text-sm">HRD PT. Teknologi Digital</div>
                         </div>
                     </div>
                 </div>
@@ -760,30 +628,41 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-16 border-t border-white/5 bg-[#020617]">
+    <!-- CTA Section -->
+    <section class="py-20 bg-deep-slate text-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">Butuh Kendaraan Sekarang?</h2>
+            <p class="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">Konsultasikan kebutuhan Anda dengan tim kami. Kami siap memberikan solusi terbaik untuk mobilitas Anda.</p>
+            <a href="https://wa.me/6281234567890" target="_blank" class="btn-gold px-10 py-4 rounded-full text-slate-900 font-semibold text-lg inline-flex items-center gap-3">
+                <i class="fab fa-whatsapp text-2xl"></i> Konsultasi via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- 7. Footer & Quick Contact -->
+    <footer class="bg-slate-900 text-white pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12 mb-12">
                 <div class="md:col-span-2">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-10 h-10 red-gradient rounded-xl flex items-center justify-center">
-                            <i class="fas fa-car-side text-xl text-white"></i>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 gold-gradient rounded-xl flex items-center justify-center">
+                            <i class="fas fa-bolt text-slate-900 text-xl"></i>
                         </div>
-                        <span class="text-2xl font-extrabold tracking-tight">
-                            <span class="text-red-500">TOTO</span> RENT
+                        <span class="text-2xl font-bold tracking-tight">
+                            Toto <span class="text-gold">Rental</span>
                         </span>
                     </div>
-                    <p class="text-gray-400 mb-6 max-w-md">
-                        Rental mobil premium terlengkap dan terpercaya. Mewah, aman, dan nyaman untuk setiap perjalanan Anda.
+                    <p class="text-slate-400 mb-6 max-w-md">
+                        Penyedia solusi mobilitas premium dan terpercaya. Dari kebutuhan pribadi hingga korporat, kami siap melayani Anda 24/7.
                     </p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-500/50 transition-all">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-gold hover:border-gold transition-all">
                             <i class="fab fa-whatsapp"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-500/50 transition-all">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-gold hover:border-gold transition-all">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-white hover:border-red-500/50 transition-all">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-gold hover:border-gold transition-all">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -792,48 +671,38 @@
                 <div>
                     <h4 class="text-white font-bold mb-6">Navigasi</h4>
                     <ul class="space-y-3">
-                        <li><a href="#home" class="text-gray-400 hover:text-red-500 transition-colors">Beranda</a></li>
-                        <li><a href="#fleet" class="text-gray-400 hover:text-red-500 transition-colors">Armada</a></li>
-                        <li><a href="#features" class="text-gray-400 hover:text-red-500 transition-colors">Keunggulan</a></li>
-                        <li><a href="#testimonials" class="text-gray-400 hover:text-red-500 transition-colors">Ulasan</a></li>
+                        <li><a href="#home" class="text-slate-400 hover:text-gold transition-colors">Beranda</a></li>
+                        <li><a href="#fleet" class="text-slate-400 hover:text-gold transition-colors">Armada</a></li>
+                        <li><a href="#whyus" class="text-slate-400 hover:text-gold transition-colors">Mengapa Kami</a></li>
+                        <li><a href="#testimonials" class="text-slate-400 hover:text-gold transition-colors">Ulasan</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="text-white font-bold mb-6">Hubungi Kami</h4>
-                    <ul class="space-y-3">
-                        <li class="flex items-center gap-3 text-gray-400">
-                            <i class="fas fa-phone text-red-500"></i> +62 812-3456-7890
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fas fa-phone text-gold"></i> +62 812-3456-7890
                         </li>
-                        <li class="flex items-center gap-3 text-gray-400">
-                            <i class="fas fa-envelope text-red-500"></i> info@totorent.com
+                        <li class="flex items-center gap-3 text-slate-400">
+                            <i class="fas fa-envelope text-gold"></i> info@velocemobility.com
                         </li>
-                        <li class="flex items-start gap-3 text-gray-400">
-                            <i class="fas fa-map-marker-alt text-red-500 mt-1"></i>
-                            Jl. Raya Sudirman No. 123, Jakarta Selatan
+                        <li class="flex items-start gap-3 text-slate-400">
+                            <i class="fas fa-map-marker-alt text-gold mt-1"></i>
+                            <div>Jl. Raya Sudirman No. 123<br>Jakarta Selatan</div>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">© 2026 TOTO RENT. All rights reserved.</p>
-                <p class="text-gray-500 text-sm">Made with <i class="fas fa-heart text-red-500"></i> by TOTO Team</p>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2026 Toto Rental. All rights reserved.</p>
+                <p class="text-slate-500 text-sm">Made with <i class="fas fa-heart text-gold"></i> for Excellence</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('glass-effect');
-            } else {
-                navbar.classList.remove('glass-effect');
-            }
-        });
-
         // Filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
         const carCards = document.querySelectorAll('.car-card');
@@ -842,11 +711,11 @@
             btn.addEventListener('click', () => {
                 // Update active button
                 filterBtns.forEach(b => {
-                    b.classList.remove('bg-white', 'text-[#030712]');
-                    b.classList.add('bg-white/5', 'border', 'border-white/10', 'text-gray-300');
+                    b.classList.remove('bg-deep-slate', 'text-white');
+                    b.classList.add('bg-white', 'border', 'border-slate-200', 'text-slate-600');
                 });
-                btn.classList.add('bg-white', 'text-[#030712]');
-                btn.classList.remove('bg-white/5', 'border', 'border-white/10', 'text-gray-300');
+                btn.classList.add('bg-deep-slate', 'text-white');
+                btn.classList.remove('bg-white', 'border', 'border-slate-200', 'text-slate-600');
 
                 // Filter cars
                 const category = btn.dataset.category;
